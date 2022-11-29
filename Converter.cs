@@ -124,7 +124,7 @@
 			return true;
 		}
 
-		private string[] ConvertToTen(string[] numberParts, int fromBase, string period) {
+		private string[] ConvertToTen(string[] numberParts, int fromBase, string period = "") {
 			if(fromBase == 10) {
 				return numberParts;
 			}
@@ -148,7 +148,7 @@
 			double numberInTen = 0;
 
 			int maxPowerOfBase = numberParts[0].Length;
-			int minPowerOfBase = -numberParts[1].Length;
+			int minPowerOfBase = numberParts.Length > 1 && numberParts[1] != String.Empty ? -1 * numberParts[1].Length : 0;
 
 			int x, y;
 			double DigitValue, PowerValue;
